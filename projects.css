@@ -1,0 +1,269 @@
+
+
+
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b1020;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* NAVIGATION */
+.navbar {
+    height: 85px;
+    padding: 0 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #252d45;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #a78bfa;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 38px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #c5c9d6;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #55c7ff;
+}
+
+/* MAIN */
+.projects-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 65px 35px;
+}
+
+/* HEADING */
+.page-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.eyebrow {
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.page-heading h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.page-heading h1 span {
+    color: #a78bfa;
+}
+
+.page-heading > p:last-child {
+    color: #9da8c0;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* PROJECT GRID */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* PROJECT CARD */
+.project-card {
+    background: #131c32;
+    border: 1px solid #293653;
+    border-radius: 18px;
+    padding: 30px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: #a78bfa;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.project-number {
+    color: #a78bfa;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.project-icon {
+    width: 48px;
+    height: 48px;
+    background: #202b4a;
+    border: 1px solid #39466a;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.category {
+    color: #55c7ff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.project-card h2 {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.project-description {
+    color: #aeb9ce;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* TECHNOLOGY TAGS */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: auto;
+}
+
+.tech-stack span {
+    background: #202b4a;
+    color: #c4b5fd;
+    border: 1px solid #414c70;
+    border-radius: 20px;
+    padding: 8px 13px;
+    font-size: 12px;
+}
+
+/* GITHUB SECTION */
+.github-section {
+    margin-top: 60px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #131c32;
+    border: 1px solid #293653;
+    border-radius: 18px;
+}
+
+.github-section h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.github-section p {
+    color: #9da8c0;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.github-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background: linear-gradient(110deg, #a78bfa, #55c7ff);
+    color: #0b1020;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.github-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px #55c7ff30;
+}
+
+/* TABLET */
+@media (max-width: 800px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 550px) {
+    .navbar {
+        height: auto;
+        min-height: 75px;
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .navbar nav {
+        gap: 20px;
+    }
+
+    .navbar nav a {
+        font-size: 13px;
+    }
+
+    .projects-page {
+        padding: 45px 18px;
+    }
+
+    .page-heading h1 {
+        font-size: 39px;
+    }
+
+    .project-card {
+        padding: 23px;
+    }
+}
+.home-btn {
+    background: linear-gradient(110deg, #a78bfa, #55c7ff);
+    color: #0b1020 !important;
+    padding: 10px 22px;
+    border-radius: 7px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(85, 199, 255, 0.3);
+}

@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Ilavarasi</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #0b1020;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            height: 85px;
+            padding: 0 9%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #26314b;
+            background: #0b1020;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo span {
+            color: #a78bfa;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: #b9c2d5;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #55c7ff;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 75px 25px;
+        }
+
+        /* PAGE HEADING */
+        .heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .heading .small-title {
+            color: #a78bfa;
+            letter-spacing: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .heading h1 {
+            font-size: 52px;
+            font-weight: 750;
+            margin-bottom: 15px;
+        }
+
+        .heading h1 span {
+            color: #a78bfa;
+        }
+
+        .heading .subtitle {
+            color: #aab5ca;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* PROJECT GRID */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        /* PROJECT CARD */
+        .project-card {
+            position: relative;
+            background: linear-gradient(145deg, #17213a, #111a2e);
+            border: 1px solid #293957;
+            border-radius: 17px;
+            padding: 30px;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s ease;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #9275e8;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .number {
+            color: #a78bfa;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            background: #222e4b;
+            border: 1px solid #3c4a6b;
+            border-radius: 14px;
+            font-size: 25px;
+        }
+
+        .category {
+            color: #55c7ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h2 {
+            font-size: 22px;
+            line-height: 1.45;
+            margin-bottom: 13px;
+        }
+
+        .description {
+            color: #aebbd0;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        /* TECHNOLOGY TAGS */
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: auto;
+        }
+
+        .technologies span {
+            background: #202c49;
+            border: 1px solid #3c4b70;
+            color: #c4b5fd;
+            padding: 8px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* GITHUB SECTION */
+        .github-section {
+            margin-top: 60px;
+            padding: 45px 25px;
+            text-align: center;
+            border: 1px solid #293957;
+            border-radius: 17px;
+            background: #131d34;
+        }
+
+        .github-section h2 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .github-section p {
+            color: #aab5ca;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .github-btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 8px;
+            background: linear-gradient(110deg, #a78bfa, #55c7ff);
+            color: #0b1020;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .github-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px #55c7ff30;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #26314b;
+            color: #8794ad;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 750px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            .heading h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .navbar {
+                height: auto;
+                min-height: 75px;
+                flex-wrap: wrap;
+                padding: 18px 5%;
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .container {
+                padding: 45px 17px;
+            }
+
+            .project-card {
+                padding: 23px;
+            }
+
+            .heading h1 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">ILAVARASI<span>.R</span></a>
+
+        <nav>
+            <a href="about.html">About</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html" class="home-btn">Home</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="heading">
+            <p class="small-title">MY WORK & EXPERIENCE</p>
+            <h1>Featured <span>Projects</span></h1>
+            <p class="subtitle">
+                Transforming ideas into practical software solutions
+                through technology and creativity.
+            </p>
+        </section>
+
+        <section class="project-grid">
+
+            <article class="project-card">
+                <div class="card-top">
+                    <span class="number">PROJECT 01</span>
+                    <div class="icon">☕</div>
+                </div>
+
+                <p class="category">JAVA BACKEND DEVELOPMENT</p>
+
+                <h2>Spring Boot REST API</h2>
+
+                <p class="description">
+                    A backend development project focused on building
+                    RESTful services, handling HTTP requests, organizing
+                    application layers and connecting with a database.
+                </p>
+
+                <div class="technologies">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>REST API</span>
+                    <span>MySQL</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-top">
+                    <span class="number">PROJECT 02</span>
+                    <div class="icon">🌐</div>
+                </div>
+
+                <p class="category">FULL STACK DEVELOPMENT</p>
+
+                <h2>MERN Web Application</h2>
+
+                <p class="description">
+                    A full-stack web application project demonstrating
+                    frontend development, server-side functionality,
+                    database integration and application workflows.
+                </p>
+
+                <div class="technologies">
+                    <span>MongoDB</span>
+                    <span>Express.js</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-top">
+                    <span class="number">PROJECT 03</span>
+                    <div class="icon">🛡️</div>
+                </div>
+
+                <p class="category">CLOUD SECURITY</p>
+
+                <h2>Intelligent Cloud Security Risk Prioritization</h2>
+
+                <p class="description">
+                    A security-focused project that organizes simulated
+                    cloud security findings and helps prioritize risks
+                    using established security framework concepts.
+                </p>
+
+                <div class="technologies">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>SQLite</span>
+                    <span>NIST</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-top">
+                    <span class="number">PROJECT 04</span>
+                    <div class="icon">📊</div>
+                </div>
+
+                <p class="category">LINUX SYSTEM MONITORING</p>
+
+                <h2>Smart System Health Guardian</h2>
+
+                <p class="description">
+                    A system monitoring project designed to observe
+                    system health and resource usage through Linux
+                    commands and shell scripting.
+                </p>
+
+                <div class="technologies">
+                    <span>Linux</span>
+                    <span>Bash</span>
+                    <span>Shell Scripting</span>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="github-section">
+            <h2>Explore More of My Work</h2>
+
+            <p>
+                Interested in my coding journey?
+                Visit my GitHub profile to explore my repositories.
+            </p>
+
+            <a
+                href="https://github.com/ilavarasi-del"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="github-btn">
+                Explore GitHub ↗
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Ilavarasi | Personal Portfolio
+    </footer>
+
+</body>
+</html>
